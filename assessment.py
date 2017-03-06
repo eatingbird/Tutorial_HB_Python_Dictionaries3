@@ -218,12 +218,9 @@ def kids_game(names):
                 prev_last = item["last"]
                 result.append(item["name"])
                 word_dic.pop(word_dic.index(item))
-                print word_dic
 
     print result
 
-kids_game(["bagon", "baltoy", "yamask", "starly", "nosepass", "kalob", "nicky", "booger"])
-exit()
 
 #####################################################################
 # You can ignore everything below this.
