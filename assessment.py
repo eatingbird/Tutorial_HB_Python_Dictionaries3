@@ -209,17 +209,21 @@ def kids_game(names):
     if names:
         result = [names[0]]
         prev_last = names[0][-1]
+        unused = [{"name": name ,"first": name[0],"last": name[-1],\
+                 "index": names.index(name)} for name in names[1:]]
+        used = []
 
     for word in names[1:]:
-        word_dic = [{"name": name ,"first": name[0],"last": name[-1],\
-                 "index": names.index(name)} for name in names[1:]]
-        for item in word_dic:
+        for item in unused:
             if prev_last == item["first"]:
                 prev_last = item["last"]
                 result.append(item["name"])
-                word_dic.pop(word_dic.index(item))
+            else:
+                used.append(item)
+        unused = used
+        used = []
 
-    print result
+    return result
 
 
 #####################################################################
