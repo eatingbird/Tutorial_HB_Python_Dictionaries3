@@ -215,13 +215,14 @@ def kids_game(names):
                  "index": names.index(name)} for name in names[1:]]
         for item in word_dic:
             if prev_last == item["first"]:
-                result.append(item["name"])
                 prev_last = item["last"]
+                result.append(item["name"])
                 word_dic.pop(word_dic.index(item))
                 print word_dic
 
     print result
 
+kids_game(["bagon", "baltoy", "yamask", "starly", "nosepass", "kalob", "nicky", "booger"])
 exit()
 
 #####################################################################
